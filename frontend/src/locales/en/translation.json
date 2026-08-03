@@ -1,0 +1,123 @@
+{
+  "nav": {
+    "home": "Home",
+    "history": "History",
+    "profile": "Profile",
+    "settings": "Settings"
+  },
+  "support": {
+    "title": "Need Help?",
+    "copy": "Contact our support team for assistance."
+  },
+  "notifications": {
+    "subtitle": "Keep track of important updates from the crop detection app.",
+    "sample": {
+      "predictionCompleted": {
+        "title": "Prediction completed",
+        "message": "Your latest leaf image has been analyzed successfully."
+      },
+      "modelUpdate": {
+        "title": "Model update available",
+        "message": "A new disease model has been released for better accuracy."
+      },
+      "preferences": {
+        "title": "Notification preferences",
+        "message": "In-app notifications are enabled in settings."
+      }
+    }
+  },
+  "header": {
+    "greeting": "Hello, {{username}} 👋",
+    "subtitle": "Keep your plants healthy, stay healthy!"
+  },
+  "buttons": {
+    "notifications": "Notifications",
+    "back": "Back",
+    "backToDashboard": "Back to Dashboard",
+    "backToHistory": "Back to History",
+    "uploadImage": "Upload Image",
+    "predicting": "Predicting...",
+    "loggingIn": "Logging in...",
+    "login": "Login",
+    "saveSettings": "Save settings",
+    "resetDefaults": "Reset to defaults",
+    "logout": "Logout",
+    "deleteAccount": "Delete account",
+    "contactUs": "Contact Us"
+  },
+  "auth": {
+    "email": "Email",
+    "password": "Password",
+    "loginFailed": "Login failed"
+  },
+  "pages": {
+    "login": "Login",
+    "settings": "Settings",
+    "notifications": "Notifications",
+    "profile": "Profile",
+    "predictionHistory": "Prediction History",
+    "noPredictions": "No Predictions Yet",
+    "uploadStart": "Upload an image from the dashboard to begin.",
+    "diseaseDetails": "Disease Details",
+    "uploadedImage": "Uploaded Image",
+    "language": "Language",
+    "inAppNotifications": "In-app notifications",
+    "notificationsHelp": "Toggle push / in-app notifications for new predictions and alerts.",
+    "emailNotifications": "Email notifications",
+    "emailNotificationsHelp": "Receive summary emails for model predictions and tips.",
+    "confidenceThreshold": "Confidence threshold",
+    "confidenceThresholdHelp": "Minimum probability for showing \"confident\" results: {{percent}}%",
+    "lowConfidenceWarning": "Prediction might not be accurate for confidence level below 70%",
+    "noPrediction": "Upload a leaf image to begin prediction.",
+    "lowConfidence": "Disease could not be detected. Try a different image.",
+    "runningPrediction": "Running AI prediction...",
+    "diseaseNotDetected": "Disease not detected! possibly {{prediction}}",
+    "lowConfidenceDetails": "Disease details are unavailable because the prediction confidence is too low.",
+    "uploadToViewDetails": "Upload an image to view disease information.",
+    "name": "Name",
+    "username": "Username",
+    "email": "Email",
+    "notificationsTitle": "Title",
+    "notificationsMessage": "Message",
+    "notificationsDate": "Date",
+    "account": "Account",
+    "deleteAccountHelp": "To delete your account, please contact support or implement a backend endpoint.",
+    "settingsSaved": "Settings saved",
+    "unsavedChanges": "Unsaved changes"
+  },
+  "upload": {
+    "image": "Image",
+    "uploadPrompt": "Upload or drag & drop an image",
+    "acceptedFormats": "JPG, PNG or WEBP (Max 10MB)",
+    "predictionFailed": "Prediction failed.",
+    "imageAlt": "Leaf"
+  },
+  "history": {
+    "backToDashboard": "Back to Dashboard",
+    "noPredictionYet": "No Predictions Yet",
+    "uploadBegin": "Upload an image from the dashboard to begin.",
+    "image": "Image",
+    "prediction": "Prediction",
+    "confidence": "Confidence",
+    "date": "Date",
+    "diseaseNotDetected": "Disease not detected! possibly {{prediction}}"
+  },
+  "profile": {
+    "name": "Name",
+    "username": "Username",
+    "email": "Email",
+    "loading": "Loading..."
+  },
+  "predictionDetails": {
+    "backToHistory": "Back to History",
+    "uploadedImage": "Uploaded Image"
+  },
+  "diseaseDetails": {
+    "diseaseDetails": "Disease Details",
+    "description": "Description",
+    "symptoms": "Symptoms",
+    "causes": "Causes",
+    "treatment": "Treatment",
+    "prevention": "Prevention"
+  }
+}

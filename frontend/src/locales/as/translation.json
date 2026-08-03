@@ -1,0 +1,123 @@
+{
+  "nav": {
+    "home": "ঘৰ",
+    "history": "ইতিহাস",
+    "profile": "প্র’ফাইল",
+    "settings": "সেটিংছ"
+  },
+  "support": {
+    "title": "সহায়তা লাগিবনে?",
+    "copy": "সহায়তাৰ বাবে আমাৰ সমৰ্থন দলক যোগাযোগ কৰক।"
+  },
+  "notifications": {
+    "subtitle": "ছাদি চিনাক্তকৰণ এপটোক গুৰুত্বপূর্ণ আপডেটসমূহৰ নিৰীক্ষণ কৰক।",
+    "sample": {
+      "predictionCompleted": {
+        "title": "Prediction completed",
+        "message": "Your latest leaf image has been analyzed successfully."
+      },
+      "modelUpdate": {
+        "title": "Model update available",
+        "message": "A new disease model has been released for better accuracy."
+      },
+      "preferences": {
+        "title": "Notification preferences",
+        "message": "In-app notifications are enabled in settings."
+      }
+    }
+  },
+  "header": {
+    "greeting": "নমস্কাৰ, {{username}} 👋",
+    "subtitle": "আপোনাৰ গছবোৰ স্বাস্থ্যবান ৰাখক, নিজকে স্বাস্থ্যবান ৰাখক!"
+  },
+  "buttons": {
+    "notifications": "জানবৰণ",
+    "back": "Back",
+    "backToDashboard": "ড্যাশবোর্ডলৈ ঘূৰি যাওক",
+    "backToHistory": "ইতিহাসলৈ ঘূৰি যাওক",
+    "uploadImage": "ছবি আপলোড কৰক",
+    "predicting": "ভবিষ্যৎণি কৰা হৈছে...",
+    "loggingIn": "লগইন কৰা হৈছে...",
+    "login": "লগইন",
+    "saveSettings": "সেটিংছ সঞ্চয় কৰক",
+    "resetDefaults": "ডিফল্টলৈ পুনৰস্থাপন কৰক",
+    "logout": "লগআউট",
+    "deleteAccount": "একাউণ্ট মচি দিয়া",
+    "contactUs": "আমাক যোগাযোগ কৰক"
+  },
+  "auth": {
+    "email": "ইমেইল",
+    "password": "পাছৱাৰ্ড",
+    "loginFailed": "লগইন বিফল"
+  },
+  "pages": {
+    "login": "Login",
+    "settings": "সেটিংছ",
+    "notifications": "জানবৰণ",
+    "profile": "প্র’ফাইল",
+    "predictionHistory": "ভবিষ্যৎণি ইতিহাস",
+    "noPredictions": "এতিয়াও কোনো ভবিষ্যৎণি নাই",
+    "uploadStart": "Upload an image from the dashboard to begin.",
+    "diseaseDetails": "Disease Details",
+    "uploadedImage": "Uploaded Image",
+    "language": "ভাষা",
+    "inAppNotifications": "In-app notifications",
+    "notificationsHelp": "Toggle push / in-app notifications for new predictions and alerts.",
+    "emailNotifications": "Email notifications",
+    "emailNotificationsHelp": "Receive summary emails for model predictions and tips.",
+    "confidenceThreshold": "Confidence threshold",
+    "confidenceThresholdHelp": "Minimum probability for showing \"confident\" results: {{percent}}%",
+    "lowConfidenceWarning": "Prediction might not be accurate for confidence level below 70%",
+    "noPrediction": "Upload a leaf image to begin prediction.",
+    "lowConfidence": "Disease could not be detected. Try a different image.",
+    "runningPrediction": "Running AI prediction...",
+    "diseaseNotDetected": "Disease not detected! possibly {{prediction}}",
+    "lowConfidenceDetails": "Disease details are unavailable because the prediction confidence is too low.",
+    "uploadToViewDetails": "Upload an image to view disease information.",
+    "name": "Name",
+    "username": "Username",
+    "email": "Email",
+    "notificationsTitle": "Title",
+    "notificationsMessage": "Message",
+    "notificationsDate": "Date",
+    "account": "একাউণ্ট",
+    "deleteAccountHelp": "To delete your account, please contact support or implement a backend endpoint.",
+    "settingsSaved": "সেটিংছ সঞ্চয় কৰা হ’ল",
+    "unsavedChanges": "অসঞ্চয়িত পৰিবর্তন"
+  },
+  "upload": {
+    "image": "ছবি",
+    "uploadPrompt": "ছবি আপলোড কৰক বা টানি দিয়া",
+    "acceptedFormats": "JPG, PNG or WEBP (Max 10MB)",
+    "predictionFailed": "ভবিষ্যৎণি ব্যর্থ হ’ল।",
+    "imageAlt": "Leaf"
+  },
+  "history": {
+    "backToDashboard": "Back to Dashboard",
+    "noPredictionYet": "এতিয়াও কোনো ভবিষ্যৎণি নাই",
+    "uploadBegin": "Upload an image from the dashboard to begin.",
+    "image": "ছবি",
+    "prediction": "ভবিষ্যৎণি",
+    "confidence": "বিশ্বাস",
+    "date": "তাৰিখ",
+    "diseaseNotDetected": "Disease not detected! possibly {{prediction}}"
+  },
+  "profile": {
+    "name": "Name",
+    "username": "Username",
+    "email": "Email",
+    "loading": "লোড হৈ আছে..."
+  },
+  "predictionDetails": {
+    "backToHistory": "Back to History",
+    "uploadedImage": "Uploaded Image"
+  },
+  "diseaseDetails": {
+    "diseaseDetails": "ৰোগৰ বিৱৰণ",
+    "description": "বিৱৰণ",
+    "symptoms": "লক্ষণ",
+    "causes": "কাৰণ",
+    "treatment": "চিকিৎসা",
+    "prevention": "প্রতিরোধ"
+  }
+}

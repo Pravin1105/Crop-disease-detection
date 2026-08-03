@@ -1,0 +1,123 @@
+{
+  "nav": {
+    "home": "ଘର",
+    "history": "ଇତିହାସ",
+    "profile": "ପ୍ରୋଫାଇଲ୍",
+    "settings": "ସେଟିଂସ୍"
+  },
+  "support": {
+    "title": "ସହାୟତା ଆବଶ୍ୟକ?",
+    "copy": "ସହାୟତା ପାଇଁ ଆମର ସପୋର୍ଟ ଟିମ ସହିତ ଯୋଗାଯୋଗ କରନ୍ତୁ।"
+  },
+  "notifications": {
+    "subtitle": "କ୍ରପ୍ ଚିହ୍ନିତ ଆପ୍‌ର ଗୁରୁତ୍ୱପୂର୍ଣ୍ଣ ଅପଡେଟ୍‌ଗୁଡ଼ିକ ଟ୍ରାକ୍ କରନ୍ତୁ।",
+    "sample": {
+      "predictionCompleted": {
+        "title": "Prediction completed",
+        "message": "Your latest leaf image has been analyzed successfully."
+      },
+      "modelUpdate": {
+        "title": "Model update available",
+        "message": "A new disease model has been released for better accuracy."
+      },
+      "preferences": {
+        "title": "Notification preferences",
+        "message": "In-app notifications are enabled in settings."
+      }
+    }
+  },
+  "header": {
+    "greeting": "ନମସ୍କାର, {{username}} 👋",
+    "subtitle": "ଆପଣଙ୍କର ଗଛଗୁଡ଼ିକୁ ସୁସ୍ଥ ରଖନ୍ତୁ, ଆପଣକୁ ମଧ୍ୟ ସୁସ୍ଥ ରଖନ୍ତୁ!"
+  },
+  "buttons": {
+    "notifications": "ବିଜ୍ଞପ୍ତି",
+    "back": "Back",
+    "backToDashboard": "ଡ୍ୟାସବୋର୍ଡକୁ ଫେରନ୍ତୁ",
+    "backToHistory": "ଇତିହାସକୁ ଫେରନ୍ତୁ",
+    "uploadImage": "ଛବି ଅପଲୋଡ୍ କରନ୍ତୁ",
+    "predicting": "ଭବିଷ୍ୟବାଣୀ କରୁଛି...",
+    "loggingIn": "ଲଗ୍‌ଇନ୍ କରୁଛି...",
+    "login": "ଲଗ୍‌ଇନ୍",
+    "saveSettings": "ସେଟିଂସ୍ ସଞ୍ଚୟ କରନ୍ତୁ",
+    "resetDefaults": "ଡିଫଲ୍ଟକୁ ରିସେଟ୍ କରନ୍ତୁ",
+    "logout": "ଲଗ୍‌ଆଉଟ୍",
+    "deleteAccount": "ଖାତା ଡିଲିଟ୍ କରନ୍ତୁ",
+    "contactUs": "ଆମ ସହିତ ଯୋଗାଯୋଗ କରନ୍ତୁ"
+  },
+  "auth": {
+    "email": "ଇମେଲ୍",
+    "password": "ପାସ୍‌ୱାର୍ଡ୍",
+    "loginFailed": "ଲଗ୍‌ଇନ୍ ବିଫଳ"
+  },
+  "pages": {
+    "login": "Login",
+    "settings": "ସେଟିଂସ୍",
+    "notifications": "ବିଜ୍ଞପ୍ତି",
+    "profile": "ପ୍ରୋଫାଇଲ୍",
+    "predictionHistory": "ଭବିଷ୍ୟବାଣୀ ଇତିହାସ",
+    "noPredictions": "ଏପର୍ଯ୍ୟନ୍ତ କୌଣସି ଭବିଷ୍ୟବାଣୀ ନାହିଁ",
+    "uploadStart": "Upload an image from the dashboard to begin.",
+    "diseaseDetails": "Disease Details",
+    "uploadedImage": "Uploaded Image",
+    "language": "ଭାଷା",
+    "inAppNotifications": "In-app notifications",
+    "notificationsHelp": "Toggle push / in-app notifications for new predictions and alerts.",
+    "emailNotifications": "Email notifications",
+    "emailNotificationsHelp": "Receive summary emails for model predictions and tips.",
+    "confidenceThreshold": "Confidence threshold",
+    "confidenceThresholdHelp": "Minimum probability for showing \"confident\" results: {{percent}}%",
+    "lowConfidenceWarning": "Prediction might not be accurate for confidence level below 70%",
+    "noPrediction": "Upload a leaf image to begin prediction.",
+    "lowConfidence": "Disease could not be detected. Try a different image.",
+    "runningPrediction": "Running AI prediction...",
+    "diseaseNotDetected": "Disease not detected! possibly {{prediction}}",
+    "lowConfidenceDetails": "Disease details are unavailable because the prediction confidence is too low.",
+    "uploadToViewDetails": "Upload an image to view disease information.",
+    "name": "Name",
+    "username": "Username",
+    "email": "Email",
+    "notificationsTitle": "Title",
+    "notificationsMessage": "Message",
+    "notificationsDate": "Date",
+    "account": "ଖାତା",
+    "deleteAccountHelp": "To delete your account, please contact support or implement a backend endpoint.",
+    "settingsSaved": "ସେଟିଂସ୍ ସଞ୍ଚୟ ହୋଇଛି",
+    "unsavedChanges": "ସଞ୍ଚୟ ହୋଇନଥିବା ପରିବର୍ତ୍ତନ"
+  },
+  "upload": {
+    "image": "ଛବି",
+    "uploadPrompt": "ଛବି ଅପଲୋଡ୍ କରନ୍ତୁ କିମ୍ବା ଡ୍ରାଗ୍ ଓ ଡ୍ରପ୍ କରନ୍ତୁ",
+    "acceptedFormats": "JPG, PNG or WEBP (Max 10MB)",
+    "predictionFailed": "ଭବିଷ୍ୟବାଣୀ ବିଫଳ ହୋଇଛି।",
+    "imageAlt": "Leaf"
+  },
+  "history": {
+    "backToDashboard": "Back to Dashboard",
+    "noPredictionYet": "ଏପର୍ଯ୍ୟନ୍ତ କୌଣସି ଭବିଷ୍ୟବାଣୀ ନାହିଁ",
+    "uploadBegin": "Upload an image from the dashboard to begin.",
+    "image": "ଛବି",
+    "prediction": "ଭବିଷ୍ୟବାଣୀ",
+    "confidence": "ନିଶ୍ଚିତତା",
+    "date": "ତାରିଖ",
+    "diseaseNotDetected": "Disease not detected! possibly {{prediction}}"
+  },
+  "profile": {
+    "name": "Name",
+    "username": "Username",
+    "email": "Email",
+    "loading": "ଲୋଡ୍ ହେଉଛି..."
+  },
+  "predictionDetails": {
+    "backToHistory": "Back to History",
+    "uploadedImage": "Uploaded Image"
+  },
+  "diseaseDetails": {
+    "diseaseDetails": "ରୋଗ ବିବରଣୀ",
+    "description": "ବର୍ଣ୍ଣନା",
+    "symptoms": "ଲକ୍ଷଣ",
+    "causes": "କାରଣ",
+    "treatment": "ଚିକିତ୍ସା",
+    "prevention": "ପ୍ରତିରୋଧ"
+  }
+}

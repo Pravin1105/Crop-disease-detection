@@ -1,0 +1,123 @@
+{
+  "nav": {
+    "home": "होम",
+    "history": "इतिहास",
+    "profile": "प्रोफ़ाइल",
+    "settings": "सेटिंग्स"
+  },
+  "support": {
+    "title": "क्या मदद चाहिए?",
+    "copy": "सहायता के लिए हमारी सपोर्ट टीम से संपर्क करें।"
+  },
+  "notifications": {
+    "subtitle": "कृषि पहचान ऐप से महत्वपूर्ण अपडेट्स पर नज़र रखें।",
+    "sample": {
+      "predictionCompleted": {
+        "title": "पूर्वानुमान पूरा हुआ",
+        "message": "आपकी सबसे हाल की पत्ती की छवि का सफलतापूर्वक विश्लेषण किया गया।"
+      },
+      "modelUpdate": {
+        "title": "मॉडल अपडेट उपलब्ध",
+        "message": "बेहतर सटीकता के लिए एक नया रोग मॉडल जारी किया गया है।"
+      },
+      "preferences": {
+        "title": "सूचना प्राथमिकताएँ",
+        "message": "सेटिंग्स में ऐप-इन सूचनाएँ सक्षम हैं।"
+      }
+    }
+  },
+  "header": {
+    "greeting": "नमस्ते, {{username}} 👋",
+    "subtitle": "अपने पौधों को स्वस्थ रखें, खुद भी स्वस्थ रहें!"
+  },
+  "buttons": {
+    "notifications": "सूचनाएँ",
+    "back": "वापस",
+    "backToDashboard": "डैशबोर्ड पर वापस",
+    "backToHistory": "इतिहास पर वापस",
+    "uploadImage": "छवि अपलोड करें",
+    "predicting": "पूर्वानुमान हो रहा है...",
+    "loggingIn": "लॉगिन हो रहा है...",
+    "login": "लॉगिन",
+    "saveSettings": "सेटिंग्स सहेजें",
+    "resetDefaults": "डिफ़ॉल्ट पर रीसेट करें",
+    "logout": "लॉगआउट",
+    "deleteAccount": "खाता हटाएं",
+    "contactUs": "हमसे संपर्क करें"
+  },
+  "auth": {
+    "email": "ईमेल",
+    "password": "पासवर्ड",
+    "loginFailed": "लॉगिन विफल"
+  },
+  "pages": {
+    "login": "लॉगिन",
+    "settings": "सेटिंग्स",
+    "notifications": "सूचनाएँ",
+    "profile": "प्रोफ़ाइल",
+    "predictionHistory": "पूर्वानुमान इतिहास",
+    "noPredictions": "अभी तक कोई पूर्वानुमान नहीं",
+    "uploadStart": "शुरू करने के लिए डैशबोर्ड से एक छवि अपलोड करें।",
+    "diseaseDetails": "रोग विवरण",
+    "uploadedImage": "अपलोड की गई छवि",
+    "language": "भाषा",
+    "inAppNotifications": "ऐप-इन सूचनाएँ",
+    "notificationsHelp": "नई भविष्यवाणियों और अलर्ट्स के लिए पुश/इन-ऐप नोटिफिकेशन चालू या बंद करें।",
+    "emailNotifications": "ईमेल सूचनाएँ",
+    "emailNotificationsHelp": "मॉडल पूर्वानुमानों और सुझावों के लिए सारांश ईमेल प्राप्त करें।",
+    "confidenceThreshold": "विश्वास सीमा",
+    "confidenceThresholdHelp": "\"विश्वसनीय\" परिणाम दिखाने के लिए न्यूनतम संभावना: {{percent}}%",
+    "lowConfidenceWarning": "70% से कम विश्वास स्तर पर पूर्वानुमान सटीक नहीं हो सकता",
+    "noPrediction": "पूर्वानुमान शुरू करने के लिए पत्ती की छवि अपलोड करें।",
+    "lowConfidence": "रोग का पता नहीं चल सका। कोई दूसरी छवि आज़माएँ।",
+    "runningPrediction": "एआई पूर्वानुमान चल रहा है...",
+    "diseaseNotDetected": "रोग नहीं पाया गया! संभवतः {{prediction}}",
+    "lowConfidenceDetails": "पूर्वानुमान विश्वास बहुत कम होने के कारण रोग विवरण उपलब्ध नहीं हैं।",
+    "uploadToViewDetails": "रोग जानकारी देखने के लिए एक छवि अपलोड करें।",
+    "name": "नाम",
+    "username": "उपयोगकर्ता नाम",
+    "email": "ईमेल",
+    "notificationsTitle": "शीर्षक",
+    "notificationsMessage": "संदेश",
+    "notificationsDate": "तारीख",
+    "account": "खाता",
+    "deleteAccountHelp": "अपना खाता हटाने के लिए, कृपया सहायता से संपर्क करें या एक बैकएंड एन्डपॉइंट लागू करें।",
+    "settingsSaved": "सेटिंग्स सहेजी गईं",
+    "unsavedChanges": "असहेजी गई बदलाव"
+  },
+  "upload": {
+    "image": "छवि",
+    "uploadPrompt": "छवि अपलोड करें या खींचकर डालें",
+    "acceptedFormats": "JPG, PNG या WEBP (अधिकतम 10MB)",
+    "predictionFailed": "पूर्वानुमान विफल रहा।",
+    "imageAlt": "पत्ती"
+  },
+  "history": {
+    "backToDashboard": "डैशबोर्ड पर वापस",
+    "noPredictionYet": "अभी तक कोई पूर्वानुमान नहीं",
+    "uploadBegin": "शुरू करने के लिए डैशबोर्ड से एक छवि अपलोड करें।",
+    "image": "छवि",
+    "prediction": "पूर्वानुमान",
+    "confidence": "विश्वास",
+    "date": "तारीख",
+    "diseaseNotDetected": "रोग नहीं पाया गया! संभवतः {{prediction}}"
+  },
+  "profile": {
+    "name": "नाम",
+    "username": "उपयोगकर्ता नाम",
+    "email": "ईमेल",
+    "loading": "लोड हो रहा है..."
+  },
+  "predictionDetails": {
+    "backToHistory": "इतिहास पर वापस",
+    "uploadedImage": "अपलोड की गई छवि"
+  },
+  "diseaseDetails": {
+    "diseaseDetails": "रोग विवरण",
+    "description": "विवरण",
+    "symptoms": "लक्षण",
+    "causes": "कारण",
+    "treatment": "उपचार",
+    "prevention": "रोकथाम"
+  }
+}

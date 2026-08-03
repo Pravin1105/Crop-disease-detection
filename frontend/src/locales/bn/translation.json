@@ -1,0 +1,123 @@
+{
+  "nav": {
+    "home": "হোম",
+    "history": "ইতিহাস",
+    "profile": "প্রোফাইল",
+    "settings": "সেটিংস"
+  },
+  "support": {
+    "title": "সাহায্য দরকার?",
+    "copy": "সহায়তার জন্য আমাদের সাপোর্ট টিমের সাথে যোগাযোগ করুন।"
+  },
+  "notifications": {
+    "subtitle": "ফসল শনাক্তকরণ অ্যাপের গুরুত্বপূর্ণ আপডেটগুলি ট্র্যাক করুন।",
+    "sample": {
+      "predictionCompleted": {
+        "title": "Prediction completed",
+        "message": "Your latest leaf image has been analyzed successfully."
+      },
+      "modelUpdate": {
+        "title": "Model update available",
+        "message": "A new disease model has been released for better accuracy."
+      },
+      "preferences": {
+        "title": "Notification preferences",
+        "message": "In-app notifications are enabled in settings."
+      }
+    }
+  },
+  "header": {
+    "greeting": "হ্যালো, {{username}} 👋",
+    "subtitle": "আপনার গাছগুলোকে সুস্থ রাখুন, নিজেকেও সুস্থ রাখুন!"
+  },
+  "buttons": {
+    "notifications": "বিজ্ঞপ্তি",
+    "back": "Back",
+    "backToDashboard": "ড্যাশবোর্ডে ফিরে যান",
+    "backToHistory": "ইতিহাসে ফিরে যান",
+    "uploadImage": "ছবি আপলোড করুন",
+    "predicting": "পredict করা হচ্ছে...",
+    "loggingIn": "লগইন হচ্ছে...",
+    "login": "লগইন",
+    "saveSettings": "সেটিংস সংরক্ষণ করুন",
+    "resetDefaults": "ডিফল্টে ফেরান",
+    "logout": "লগআউট",
+    "deleteAccount": "অ্যাকাউন্ট মুছুন",
+    "contactUs": "আমাদের সাথে যোগাযোগ করুন"
+  },
+  "auth": {
+    "email": "ইমেল",
+    "password": "পাসওয়ার্ড",
+    "loginFailed": "লগইন ব্যর্থ"
+  },
+  "pages": {
+    "login": "Login",
+    "settings": "সেটিংস",
+    "notifications": "বিজ্ঞপ্তি",
+    "profile": "প্রোফাইল",
+    "predictionHistory": "ভবিষ্যদ্বাণী ইতিহাস",
+    "noPredictions": "এখনও কোনো ভবিষ্যদ্বাণী নেই",
+    "uploadStart": "Upload an image from the dashboard to begin.",
+    "diseaseDetails": "Disease Details",
+    "uploadedImage": "Uploaded Image",
+    "language": "ভাষা",
+    "inAppNotifications": "In-app notifications",
+    "notificationsHelp": "Toggle push / in-app notifications for new predictions and alerts.",
+    "emailNotifications": "Email notifications",
+    "emailNotificationsHelp": "Receive summary emails for model predictions and tips.",
+    "confidenceThreshold": "Confidence threshold",
+    "confidenceThresholdHelp": "Minimum probability for showing \"confident\" results: {{percent}}%",
+    "lowConfidenceWarning": "Prediction might not be accurate for confidence level below 70%",
+    "noPrediction": "Upload a leaf image to begin prediction.",
+    "lowConfidence": "Disease could not be detected. Try a different image.",
+    "runningPrediction": "Running AI prediction...",
+    "diseaseNotDetected": "Disease not detected! possibly {{prediction}}",
+    "lowConfidenceDetails": "Disease details are unavailable because the prediction confidence is too low.",
+    "uploadToViewDetails": "Upload an image to view disease information.",
+    "name": "Name",
+    "username": "Username",
+    "email": "Email",
+    "notificationsTitle": "Title",
+    "notificationsMessage": "Message",
+    "notificationsDate": "Date",
+    "account": "অ্যাকাউন্ট",
+    "deleteAccountHelp": "To delete your account, please contact support or implement a backend endpoint.",
+    "settingsSaved": "সেটিংস সংরক্ষিত",
+    "unsavedChanges": "অসংরক্ষিত পরিবর্তন"
+  },
+  "upload": {
+    "image": "ছবি",
+    "uploadPrompt": "একটি ছবি আপলোড বা ড্র্যাগ এবং ড্রপ করুন",
+    "acceptedFormats": "JPG, PNG or WEBP (Max 10MB)",
+    "predictionFailed": "ভবিষ্যদ্বাণী ব্যর্থ হয়েছে।",
+    "imageAlt": "Leaf"
+  },
+  "history": {
+    "backToDashboard": "Back to Dashboard",
+    "noPredictionYet": "এখনও কোনো ভবিষ্যদ্বাণী নেই",
+    "uploadBegin": "Upload an image from the dashboard to begin.",
+    "image": "ছবি",
+    "prediction": "ভবিষ্যদ্বাণী",
+    "confidence": "নিশ্চয়তা",
+    "date": "তারিখ",
+    "diseaseNotDetected": "Disease not detected! possibly {{prediction}}"
+  },
+  "profile": {
+    "name": "Name",
+    "username": "Username",
+    "email": "Email",
+    "loading": "লোড হচ্ছে..."
+  },
+  "predictionDetails": {
+    "backToHistory": "Back to History",
+    "uploadedImage": "Uploaded Image"
+  },
+  "diseaseDetails": {
+    "diseaseDetails": "রোগের বিবরণ",
+    "description": "বর্ণনা",
+    "symptoms": "লক্ষণ",
+    "causes": "কারণ",
+    "treatment": "চিকিৎসা",
+    "prevention": "প্রতিরোধ"
+  }
+}

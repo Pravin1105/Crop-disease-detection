@@ -1,0 +1,123 @@
+{
+  "nav": {
+    "home": "मुखपृष्ठ",
+    "history": "इतिहास",
+    "profile": "प्रोफाइल",
+    "settings": "सेटिंग्ज"
+  },
+  "support": {
+    "title": "मदत हवी आहे?",
+    "copy": "मदतीसाठी आमच्या सपोर्ट टीमशी संपर्क साधा."
+  },
+  "notifications": {
+    "subtitle": "पीक शोध अॅपमधील महत्त्वाच्या अपडेट्सचा मागोवा ठेवा.",
+    "sample": {
+      "predictionCompleted": {
+        "title": "Prediction completed",
+        "message": "Your latest leaf image has been analyzed successfully."
+      },
+      "modelUpdate": {
+        "title": "Model update available",
+        "message": "A new disease model has been released for better accuracy."
+      },
+      "preferences": {
+        "title": "Notification preferences",
+        "message": "In-app notifications are enabled in settings."
+      }
+    }
+  },
+  "header": {
+    "greeting": "नमस्कार, {{username}} 👋",
+    "subtitle": "आपल्या plantsना निरोगी ठेवा, स्वतःही निरोगी रहा!"
+  },
+  "buttons": {
+    "notifications": "अधिसूचना",
+    "back": "Back",
+    "backToDashboard": "डॅशबोर्डकडे परत",
+    "backToHistory": "इतिहासाकडे परत",
+    "uploadImage": "प्रतिमा अपलोड करा",
+    "predicting": "भविष्यवाणी केली जात आहे...",
+    "loggingIn": "लॉग इन होत आहे...",
+    "login": "लॉग इन",
+    "saveSettings": "सेटिंग्ज जतन करा",
+    "resetDefaults": "डीफॉल्टला रीसेट करा",
+    "logout": "लॉगआउट",
+    "deleteAccount": "खाते हटवा",
+    "contactUs": "आमच्याशी संपर्क साधा"
+  },
+  "auth": {
+    "email": "ईमेल",
+    "password": "पासवर्ड",
+    "loginFailed": "लॉग इन अयशस्वी"
+  },
+  "pages": {
+    "login": "Login",
+    "settings": "सेटिंग्ज",
+    "notifications": "अधिसूचना",
+    "profile": "प्रोफाइल",
+    "predictionHistory": "भविष्यवाणी इतिहास",
+    "noPredictions": "अद्याप कोणतीही भविष्यवाणी नाही",
+    "uploadStart": "Upload an image from the dashboard to begin.",
+    "diseaseDetails": "Disease Details",
+    "uploadedImage": "Uploaded Image",
+    "language": "भाषा",
+    "inAppNotifications": "In-app notifications",
+    "notificationsHelp": "Toggle push / in-app notifications for new predictions and alerts.",
+    "emailNotifications": "Email notifications",
+    "emailNotificationsHelp": "Receive summary emails for model predictions and tips.",
+    "confidenceThreshold": "Confidence threshold",
+    "confidenceThresholdHelp": "Minimum probability for showing \"confident\" results: {{percent}}%",
+    "lowConfidenceWarning": "Prediction might not be accurate for confidence level below 70%",
+    "noPrediction": "Upload a leaf image to begin prediction.",
+    "lowConfidence": "Disease could not be detected. Try a different image.",
+    "runningPrediction": "Running AI prediction...",
+    "diseaseNotDetected": "Disease not detected! possibly {{prediction}}",
+    "lowConfidenceDetails": "Disease details are unavailable because the prediction confidence is too low.",
+    "uploadToViewDetails": "Upload an image to view disease information.",
+    "name": "Name",
+    "username": "Username",
+    "email": "Email",
+    "notificationsTitle": "Title",
+    "notificationsMessage": "Message",
+    "notificationsDate": "Date",
+    "account": "खाते",
+    "deleteAccountHelp": "To delete your account, please contact support or implement a backend endpoint.",
+    "settingsSaved": "सेटिंग्ज जतन केल्या",
+    "unsavedChanges": "जतन न केलेले बदल"
+  },
+  "upload": {
+    "image": "प्रतिमा",
+    "uploadPrompt": "प्रतिमा अपलोड करा किंवा ड्रॅग आणि ड्रॉप करा",
+    "acceptedFormats": "JPG, PNG or WEBP (Max 10MB)",
+    "predictionFailed": "भविष्यवाणी अयशस्वी झाली।",
+    "imageAlt": "Leaf"
+  },
+  "history": {
+    "backToDashboard": "Back to Dashboard",
+    "noPredictionYet": "अद्याप कोणतीही भविष्यवाणी नाही",
+    "uploadBegin": "Upload an image from the dashboard to begin.",
+    "image": "प्रतिमा",
+    "prediction": "भविष्यवाणी",
+    "confidence": "विश्वास",
+    "date": "तारीख",
+    "diseaseNotDetected": "Disease not detected! possibly {{prediction}}"
+  },
+  "profile": {
+    "name": "Name",
+    "username": "Username",
+    "email": "Email",
+    "loading": "लोड होत आहे..."
+  },
+  "predictionDetails": {
+    "backToHistory": "Back to History",
+    "uploadedImage": "Uploaded Image"
+  },
+  "diseaseDetails": {
+    "diseaseDetails": "रोग तपशील",
+    "description": "वर्णन",
+    "symptoms": "लक्षणे",
+    "causes": "कारणे",
+    "treatment": "उपचार",
+    "prevention": "प्रतिबंध"
+  }
+}

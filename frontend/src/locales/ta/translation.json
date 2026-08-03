@@ -1,0 +1,123 @@
+{
+  "nav": {
+    "home": "முகப்பு",
+    "history": "வரலாறு",
+    "profile": "சுயவிவரம்",
+    "settings": "அமைப்புகள்"
+  },
+  "support": {
+    "title": "உதவி வேண்டுமா?",
+    "copy": "உதவிக்கு எங்கள் ஆதரவு குழுவைத் தொடர்பு கொள்ளுங்கள்."
+  },
+  "notifications": {
+    "subtitle": "சாகுபடி கண்டறிதல் செயலியின் முக்கியமான புதுப்பிப்புகளைப் பின்தொடரவும்.",
+    "sample": {
+      "predictionCompleted": {
+        "title": "Prediction completed",
+        "message": "Your latest leaf image has been analyzed successfully."
+      },
+      "modelUpdate": {
+        "title": "Model update available",
+        "message": "A new disease model has been released for better accuracy."
+      },
+      "preferences": {
+        "title": "Notification preferences",
+        "message": "In-app notifications are enabled in settings."
+      }
+    }
+  },
+  "header": {
+    "greeting": "வணக்கம், {{username}} 👋",
+    "subtitle": "உங்கள் செடிகளை ஆரோக்கியமாக வைத்துக்கொள்ளுங்கள், உங்களையும் ஆரோக்கியமாக வைத்துக்கொள்ளுங்கள்!"
+  },
+  "buttons": {
+    "notifications": "அறிவிப்புகள்",
+    "back": "Back",
+    "backToDashboard": "டாஷ்போர்டுக்கு திரும்பு",
+    "backToHistory": "வரலாற்றுக்கு திரும்பு",
+    "uploadImage": "படத்தை பதிவேற்று",
+    "predicting": "கணிப்பு செய்கின்றோம்...",
+    "loggingIn": "உள்நுழைகிறோம்...",
+    "login": "உள்நுழை",
+    "saveSettings": "அமைப்புகளைச் சேமி",
+    "resetDefaults": "இயல்புநிலைக்கு மாற்று",
+    "logout": "வெளியேறு",
+    "deleteAccount": "கணக்கை நீக்கு",
+    "contactUs": "எங்களை தொடர்பு கொள்ளவும்"
+  },
+  "auth": {
+    "email": "மின்னஞ்சல்",
+    "password": "கடவுச்சொல்",
+    "loginFailed": "உள்நுழைவு தோல்வி"
+  },
+  "pages": {
+    "login": "Login",
+    "settings": "அமைப்புகள்",
+    "notifications": "அறிவிப்புகள்",
+    "profile": "சுயவிவரம்",
+    "predictionHistory": "கணிப்பு வரலாறு",
+    "noPredictions": "இதுவரை கணிப்புகள் இல்லை",
+    "uploadStart": "Upload an image from the dashboard to begin.",
+    "diseaseDetails": "Disease Details",
+    "uploadedImage": "Uploaded Image",
+    "language": "மொழி",
+    "inAppNotifications": "In-app notifications",
+    "notificationsHelp": "Toggle push / in-app notifications for new predictions and alerts.",
+    "emailNotifications": "Email notifications",
+    "emailNotificationsHelp": "Receive summary emails for model predictions and tips.",
+    "confidenceThreshold": "Confidence threshold",
+    "confidenceThresholdHelp": "Minimum probability for showing \"confident\" results: {{percent}}%",
+    "lowConfidenceWarning": "Prediction might not be accurate for confidence level below 70%",
+    "noPrediction": "Upload a leaf image to begin prediction.",
+    "lowConfidence": "Disease could not be detected. Try a different image.",
+    "runningPrediction": "Running AI prediction...",
+    "diseaseNotDetected": "Disease not detected! possibly {{prediction}}",
+    "lowConfidenceDetails": "Disease details are unavailable because the prediction confidence is too low.",
+    "uploadToViewDetails": "Upload an image to view disease information.",
+    "name": "Name",
+    "username": "Username",
+    "email": "Email",
+    "notificationsTitle": "Title",
+    "notificationsMessage": "Message",
+    "notificationsDate": "Date",
+    "account": "கணக்கு",
+    "deleteAccountHelp": "To delete your account, please contact support or implement a backend endpoint.",
+    "settingsSaved": "அமைப்புகள் சேமிக்கப்பட்டன",
+    "unsavedChanges": "சேமிக்கப்படாத மாற்றங்கள்"
+  },
+  "upload": {
+    "image": "படம்",
+    "uploadPrompt": "ஒரு படத்தை பதிவேற்று அல்லது இழுத்து விடவும்",
+    "acceptedFormats": "JPG, PNG or WEBP (Max 10MB)",
+    "predictionFailed": "கணிப்பு தோல்வியடைந்தது.",
+    "imageAlt": "Leaf"
+  },
+  "history": {
+    "backToDashboard": "Back to Dashboard",
+    "noPredictionYet": "இதுவரை கணிப்புகள் இல்லை",
+    "uploadBegin": "Upload an image from the dashboard to begin.",
+    "image": "படம்",
+    "prediction": "கணிப்பு",
+    "confidence": "நம்பிக்கை",
+    "date": "தேதி",
+    "diseaseNotDetected": "Disease not detected! possibly {{prediction}}"
+  },
+  "profile": {
+    "name": "Name",
+    "username": "Username",
+    "email": "Email",
+    "loading": "ஏற்றப்படுகிறது..."
+  },
+  "predictionDetails": {
+    "backToHistory": "Back to History",
+    "uploadedImage": "Uploaded Image"
+  },
+  "diseaseDetails": {
+    "diseaseDetails": "நோய் விவரங்கள்",
+    "description": "விளக்கம்",
+    "symptoms": "அறிகுறிகள்",
+    "causes": "காரணங்கள்",
+    "treatment": "சிகிச்சை",
+    "prevention": "தடுப்பு"
+  }
+}

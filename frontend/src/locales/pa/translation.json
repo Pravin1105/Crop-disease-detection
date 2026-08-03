@@ -1,0 +1,123 @@
+{
+  "nav": {
+    "home": "ਘਰ",
+    "history": "ਇਤਿਹਾਸ",
+    "profile": "ਪ੍ਰੋਫਾਈਲ",
+    "settings": "ਸੈਟਿੰਗਾਂ"
+  },
+  "support": {
+    "title": "ਮਦਦ ਚਾਹੀਦੀ ਹੈ?",
+    "copy": "ਮਦਦ ਲਈ ਸਾਡੀ ਸਪੋਰਟ ਟੀਮ ਨਾਲ ਸੰਪਰਕ ਕਰੋ।"
+  },
+  "notifications": {
+    "subtitle": "ਫਸਲ ਪਹਿਚਾਣ ਐਪ ਤੋਂ ਮਹੱਤਵਪੂਰਣ ਅਪਡੇਟਾਂ ਨੂੰ ਵੇਖੋ।",
+    "sample": {
+      "predictionCompleted": {
+        "title": "Prediction completed",
+        "message": "Your latest leaf image has been analyzed successfully."
+      },
+      "modelUpdate": {
+        "title": "Model update available",
+        "message": "A new disease model has been released for better accuracy."
+      },
+      "preferences": {
+        "title": "Notification preferences",
+        "message": "In-app notifications are enabled in settings."
+      }
+    }
+  },
+  "header": {
+    "greeting": "ਹੈਲੋ, {{username}} 👋",
+    "subtitle": "ਆਪਣੀਆਂ ਪੌਦਿਆਂ ਨੂੰ ਸਿਹਤਮੰਦ ਰੱਖੋ, ਆਪਣੇ ਆਪ ਨੂੰ ਵੀ ਸਿਹਤਮੰਦ ਰੱਖੋ!"
+  },
+  "buttons": {
+    "notifications": "ਨੋਟੀਫਿਕੇਸ਼ਨ",
+    "back": "Back",
+    "backToDashboard": "ਡੈਸ਼ਬੋਰਡ ਵੈਲਾਪਸ ਵਾਪਸ",
+    "backToHistory": "ਇਤਿਹਾਸ ਵੱਲ ਵਾਪਸ",
+    "uploadImage": "ਚਿੱਤਰ ਅਪਲੋਡ ਕਰੋ",
+    "predicting": "ਭਵਿੱਖਬਾਣੀ ਹੋ ਰਹੀ ਹੈ...",
+    "loggingIn": "ਲੌਗਇਨ ਹੋ ਰਿਹਾ ਹੈ...",
+    "login": "ਲੌਗਇਨ",
+    "saveSettings": "ਸੈਟਿੰਗਾਂ ਸੰਭਾਲੋ",
+    "resetDefaults": "ਡਿਫ਼ੌਲਟ ਤੇ ਰੀਸੈੱਟ ਕਰੋ",
+    "logout": "ਲੌਗਆਊਟ",
+    "deleteAccount": "ਖਾਤਾ ਮਿਟਾਓ",
+    "contactUs": "ਸਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰੋ"
+  },
+  "auth": {
+    "email": "ਈਮੇਲ",
+    "password": "ਪਾਸਵਰਡ",
+    "loginFailed": "ਲੌਗਇਨ ਅਸਫਲ"
+  },
+  "pages": {
+    "login": "Login",
+    "settings": "ਸੈਟਿੰਗਾਂ",
+    "notifications": "ਨੋਟੀਫਿਕੇਸ਼ਨ",
+    "profile": "ਪ੍ਰੋਫਾਈਲ",
+    "predictionHistory": "ਭਵਿੱਖਬਾਣੀ ਇਤਿਹਾਸ",
+    "noPredictions": "ਹੁਣ ਤੱਕ ਕੋਈ ਭਵਿੱਖਬਾਣੀ ਨਹੀਂ",
+    "uploadStart": "Upload an image from the dashboard to begin.",
+    "diseaseDetails": "Disease Details",
+    "uploadedImage": "Uploaded Image",
+    "language": "ਭਾਸ਼ਾ",
+    "inAppNotifications": "In-app notifications",
+    "notificationsHelp": "Toggle push / in-app notifications for new predictions and alerts.",
+    "emailNotifications": "Email notifications",
+    "emailNotificationsHelp": "Receive summary emails for model predictions and tips.",
+    "confidenceThreshold": "Confidence threshold",
+    "confidenceThresholdHelp": "Minimum probability for showing \"confident\" results: {{percent}}%",
+    "lowConfidenceWarning": "Prediction might not be accurate for confidence level below 70%",
+    "noPrediction": "Upload a leaf image to begin prediction.",
+    "lowConfidence": "Disease could not be detected. Try a different image.",
+    "runningPrediction": "Running AI prediction...",
+    "diseaseNotDetected": "Disease not detected! possibly {{prediction}}",
+    "lowConfidenceDetails": "Disease details are unavailable because the prediction confidence is too low.",
+    "uploadToViewDetails": "Upload an image to view disease information.",
+    "name": "Name",
+    "username": "Username",
+    "email": "Email",
+    "notificationsTitle": "Title",
+    "notificationsMessage": "Message",
+    "notificationsDate": "Date",
+    "account": "ਖਾਤਾ",
+    "deleteAccountHelp": "To delete your account, please contact support or implement a backend endpoint.",
+    "settingsSaved": "ਸੈਟਿੰਗਾਂ ਸੰਭਾਲੀਆਂ ਗਈਆਂ",
+    "unsavedChanges": "ਸੰਭਾਲੇ ਨਾ ਗਏ ਬਦਲਾਅ"
+  },
+  "upload": {
+    "image": "ਚਿੱਤਰ",
+    "uploadPrompt": "ਇੱਕ ਚਿੱਤਰ ਅਪਲੋਡ ਕਰੋ ਜਾਂ ਘਸੀਟੋ ਅਤੇ ਸੁੱਟੋ",
+    "acceptedFormats": "JPG, PNG or WEBP (Max 10MB)",
+    "predictionFailed": "ਭਵਿੱਖਬਾਣੀ ਅਸਫਲ ਹੋਈ।",
+    "imageAlt": "Leaf"
+  },
+  "history": {
+    "backToDashboard": "Back to Dashboard",
+    "noPredictionYet": "ਹੁਣ ਤੱਕ ਕੋਈ ਭਵਿੱਖਬਾਣੀ ਨਹੀਂ",
+    "uploadBegin": "Upload an image from the dashboard to begin.",
+    "image": "ਚਿੱਤਰ",
+    "prediction": "ਭਵਿੱਖਬਾਣੀ",
+    "confidence": "ਭਰੋਸਾ",
+    "date": "ਤਾਰੀਖ",
+    "diseaseNotDetected": "Disease not detected! possibly {{prediction}}"
+  },
+  "profile": {
+    "name": "Name",
+    "username": "Username",
+    "email": "Email",
+    "loading": "ਲੋਡ ਹੋ ਰਿਹਾ ਹੈ..."
+  },
+  "predictionDetails": {
+    "backToHistory": "Back to History",
+    "uploadedImage": "Uploaded Image"
+  },
+  "diseaseDetails": {
+    "diseaseDetails": "ਰੋਗ ਵੇਰਵੇ",
+    "description": "ਵੇਰਵਾ",
+    "symptoms": "ਲੱਛਣ",
+    "causes": "ਕਾਰਨ",
+    "treatment": "इलਾਜ",
+    "prevention": "ਰੋਕਥਾਮ"
+  }
+}

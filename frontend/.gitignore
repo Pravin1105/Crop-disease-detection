@@ -1,0 +1,11 @@
+node_modules
+dist
+.DS_Store
+src/.DS_Store
+backend/venv/
+node_modules/
+frontend/node_modules/
+frontend/package-lock.json
+frontend/package.json
+frontend/vite.config.js
+frontend/.env

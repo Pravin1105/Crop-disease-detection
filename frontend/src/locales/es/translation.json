@@ -1,0 +1,123 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "history": "Historial",
+    "profile": "Perfil",
+    "settings": "Configuración"
+  },
+  "support": {
+    "title": "¿Necesitas ayuda?",
+    "copy": "Contacta a nuestro equipo de soporte para asistencia."
+  },
+  "notifications": {
+    "subtitle": "Mantén un registro de las actualizaciones importantes de la aplicación de detección de cultivos.",
+    "sample": {
+      "predictionCompleted": {
+        "title": "Predicción completada",
+        "message": "Tu última imagen de hoja ha sido analizada correctamente."
+      },
+      "modelUpdate": {
+        "title": "Actualización del modelo disponible",
+        "message": "Se ha lanzado un nuevo modelo de enfermedad para mayor precisión."
+      },
+      "preferences": {
+        "title": "Preferencias de notificación",
+        "message": "Las notificaciones en la aplicación están habilitadas en la configuración."
+      }
+    }
+  },
+  "header": {
+    "greeting": "Hola, {{username}} 👋",
+    "subtitle": "Mantén tus plantas saludables, ¡mantente saludable!"
+  },
+  "buttons": {
+    "notifications": "Notificaciones",
+    "back": "Atrás",
+    "backToDashboard": "Volver al panel",
+    "backToHistory": "Volver al historial",
+    "uploadImage": "Subir imagen",
+    "predicting": "Prediciendo...",
+    "loggingIn": "Iniciando sesión...",
+    "login": "Iniciar sesión",
+    "saveSettings": "Guardar configuración",
+    "resetDefaults": "Restablecer valores predeterminados",
+    "logout": "Cerrar sesión",
+    "deleteAccount": "Eliminar cuenta",
+    "contactUs": "Contáctanos"
+  },
+  "auth": {
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "loginFailed": "Error al iniciar sesión"
+  },
+  "pages": {
+    "login": "Iniciar sesión",
+    "settings": "Configuración",
+    "notifications": "Notificaciones",
+    "profile": "Perfil",
+    "predictionHistory": "Historial de predicciones",
+    "noPredictions": "No hay predicciones aún",
+    "uploadStart": "Sube una imagen desde el panel para comenzar.",
+    "diseaseDetails": "Detalles de la enfermedad",
+    "uploadedImage": "Imagen subida",
+    "language": "Idioma",
+    "inAppNotifications": "Notificaciones dentro de la aplicación",
+    "notificationsHelp": "Activa o desactiva notificaciones push / internas para nuevas predicciones y alertas.",
+    "emailNotifications": "Notificaciones por correo electrónico",
+    "emailNotificationsHelp": "Recibe correos electrónicos resumidos para predicciones y consejos.",
+    "confidenceThreshold": "Umbral de confianza",
+    "confidenceThresholdHelp": "Probabilidad mínima para mostrar resultados \"confiables\": {{percent}}%",
+    "lowConfidenceWarning": "La predicción puede no ser precisa para un nivel de confianza inferior al 70%",
+    "noPrediction": "Sube una imagen de hoja para comenzar la predicción.",
+    "lowConfidence": "No se pudo detectar la enfermedad. Intenta con otra imagen.",
+    "runningPrediction": "Ejecutando predicción de IA...",
+    "diseaseNotDetected": "¡No se detectó enfermedad! posiblemente {{prediction}}",
+    "lowConfidenceDetails": "Los detalles de la enfermedad no están disponibles porque la confianza de la predicción es demasiado baja.",
+    "uploadToViewDetails": "Sube una imagen para ver información de la enfermedad.",
+    "name": "Nombre",
+    "username": "Nombre de usuario",
+    "email": "Correo electrónico",
+    "notificationsTitle": "Título",
+    "notificationsMessage": "Mensaje",
+    "notificationsDate": "Fecha",
+    "account": "Cuenta",
+    "deleteAccountHelp": "Para eliminar tu cuenta, contacta al soporte o implementa una ruta backend.",
+    "settingsSaved": "Configuración guardada",
+    "unsavedChanges": "Cambios no guardados"
+  },
+  "upload": {
+    "image": "Imagen",
+    "uploadPrompt": "Sube o arrastra y suelta una imagen",
+    "acceptedFormats": "JPG, PNG o WEBP (Máx 10 MB)",
+    "predictionFailed": "La predicción falló.",
+    "imageAlt": "Hoja"
+  },
+  "history": {
+    "backToDashboard": "Volver al panel",
+    "noPredictionYet": "No hay predicciones aún",
+    "uploadBegin": "Sube una imagen desde el panel para comenzar.",
+    "image": "Imagen",
+    "prediction": "Predicción",
+    "confidence": "Confianza",
+    "date": "Fecha",
+    "diseaseNotDetected": "¡No se detectó enfermedad! posiblemente {{prediction}}"
+  },
+  "profile": {
+    "name": "Nombre",
+    "username": "Nombre de usuario",
+    "email": "Correo electrónico",
+    "loading": "Cargando..."
+  },
+  "predictionDetails": {
+    "backToHistory": "Volver al historial",
+    "uploadedImage": "Imagen subida"
+  },
+  "diseaseDetails": {
+    "diseaseDetails": "Detalles de la enfermedad",
+    "description": "Descripción",
+    "symptoms": "Síntomas",
+    "causes": "Causas",
+    "treatment": "Tratamiento",
+    "prevention": "Prevención"
+  }
+}
