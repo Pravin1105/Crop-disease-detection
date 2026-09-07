@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "../router";
 import { ArrowLeft } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { logout } from "../services/auth";
+import Header from "../components/layout/Header";
 
 const DEFAULTS = {
   notifications: true,
@@ -85,50 +86,52 @@ export default function Settings() {
   }
 
   return (
-    <main className="min-h-screen bg-slate-100">
-      <div className="mx-auto max-w-5xl px-8 py-8">
+    <div className="min-h-screen bg-[var(--bg)] text-[var(--text)] transition-colors">
+      <Header />
+
+      <main className="mx-auto max-w-5xl px-8 py-8">
         <button
           onClick={() => navigate("/")}
-          className="mb-8 flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-5 py-3 shadow-sm transition hover:bg-slate-100"
+          className="mb-8 flex items-center gap-2 rounded-lg border border-[var(--border)] bg-[var(--surface)] px-5 py-2.5 text-sm font-semibold text-[var(--text)] transition hover:bg-[var(--surface-2)]"
         >
           <ArrowLeft size={18} />
           {t("buttons.backToDashboard")}
         </button>
 
-        <h1 className="mb-6 text-4xl font-bold">{t("pages.settings")}</h1>
+        <h1 className="mb-6 text-3xl font-bold text-[var(--text)]">{t("pages.settings")}</h1>
 
-        <div className="rounded-2xl bg-white p-8 shadow space-y-6">
-          <section className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-8 shadow-sm space-y-6">
+          <section className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             <div>
-              <label className="flex items-center gap-3">
+              <label className="flex items-center gap-3 cursor-pointer">
                 <input
                   type="checkbox"
                   name="notifications"
                   checked={!!settings.notifications}
                   onChange={handleChange}
-                  className="h-4 w-4"
+                  className="h-4 w-4 accent-[var(--green)]"
                 />
-                <span className="ml-2">{t("pages.inAppNotifications")}</span>
+                <span className="text-sm font-medium text-[var(--text)]">{t("pages.inAppNotifications")}</span>
               </label>
-              <p className="mt-2 text-sm text-slate-500">{t("pages.notificationsHelp")}</p>
+              <p className="mt-1 text-xs text-[var(--text-muted)]">{t("pages.notificationsHelp")}</p>
             </div>
 
             <div>
-              <label className="flex items-center gap-3">
+              <label className="flex items-center gap-3 cursor-pointer">
                 <input
                   type="checkbox"
                   name="emailNotifications"
                   checked={!!settings.emailNotifications}
                   onChange={handleChange}
-                  className="h-4 w-4"
+                  className="h-4 w-4 accent-[var(--green)]"
                 />
-                <span className="ml-2">{t("pages.emailNotifications")}</span>
+                <span className="text-sm font-medium text-[var(--text)]">{t("pages.emailNotifications")}</span>
               </label>
-              <p className="mt-2 text-sm text-slate-500">{t("pages.emailNotificationsHelp")}</p>
+              <p className="mt-1 text-xs text-[var(--text-muted)]">{t("pages.emailNotificationsHelp")}</p>
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-slate-700">{t("pages.confidenceThreshold")}</label>
+              <label className="block text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">{t("pages.confidenceThreshold")}</label>
               <input
                 type="range"
                 name="confidenceThreshold"
@@ -137,20 +140,20 @@ export default function Settings() {
                 step={0.01}
                 value={settings.confidenceThreshold}
                 onChange={handleChange}
-                className="w-full"
+                className="w-full mt-2 accent-[var(--green)]"
               />
-              <div className="mt-2 text-sm text-slate-600">{t("pages.confidenceThresholdHelp", { percent: (settings.confidenceThreshold*100).toFixed(0) })}</div>
+              <div className="mt-1 text-xs text-[var(--text-muted)]">{t("pages.confidenceThresholdHelp", { percent: (settings.confidenceThreshold*100).toFixed(0) })}</div>
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-slate-700">{t("pages.language")}</label>
+              <label className="block text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">{t("pages.language")}</label>
               <select
                 value={language}
                 onChange={handleLanguageChange}
-                className="mt-2 w-full rounded-lg border p-3"
+                className="mt-2 w-full rounded-lg border border-[var(--border)] bg-[var(--surface-2)] p-2.5 text-sm text-[var(--text)] focus:outline-none focus:border-[var(--green)]"
               >
                 {LANGUAGE_OPTIONS.map((option) => (
-                  <option key={option.value} value={option.value}>
+                  <option key={option.value} value={option.value} className="bg-[var(--surface)] text-[var(--text)]">
                     {option.label}
                   </option>
                 ))}
@@ -158,25 +161,24 @@ export default function Settings() {
             </div>
           </section>
 
-          <section className="pt-4 border-t">
-            <h2 className="text-lg font-semibold">{t("pages.account")}</h2>
-
+          <section className="pt-4 border-t border-[var(--border)]">
+            <h2 className="text-base font-semibold text-[var(--text)]">{t("pages.account")}</h2>
             <div className="mt-4 flex flex-wrap gap-3">
-              <button onClick={onLogout} className="rounded bg-red-600 px-4 py-2 text-white">{t("buttons.logout")}</button>
-              <button onClick={() => alert(t("pages.deleteAccountHelp"))} className="rounded border px-4 py-2">{t("buttons.deleteAccount")}</button>
+              <button onClick={onLogout} className="rounded-lg bg-[var(--danger)] px-4 py-2 text-xs font-semibold text-white">{t("buttons.logout")}</button>
+              <button onClick={() => alert(t("pages.deleteAccountHelp"))} className="rounded-lg border border-[var(--border)] bg-[var(--surface-2)] px-4 py-2 text-xs font-semibold text-[var(--text)] hover:border-[var(--danger)]">{t("buttons.deleteAccount")}</button>
             </div>
           </section>
 
-          <div className="pt-4 border-t flex items-center justify-between">
+          <div className="pt-4 border-t border-[var(--border)] flex items-center justify-between">
             <div>
-              <button onClick={onSave} className="rounded bg-blue-600 px-4 py-2 text-white">{t("buttons.saveSettings")}</button>
-              <button onClick={onReset} className="ml-3 rounded border px-4 py-2">{t("buttons.resetDefaults")}</button>
+              <button onClick={onSave} className="rounded-lg bg-[var(--green)] px-4 py-2 text-xs font-semibold text-white">{t("buttons.saveSettings")}</button>
+              <button onClick={onReset} className="ml-3 rounded-lg border border-[var(--border)] bg-[var(--surface-2)] px-4 py-2 text-xs font-semibold text-[var(--text)]">{t("buttons.resetDefaults")}</button>
             </div>
 
-            <div className="text-sm text-slate-600">{saved ? t("pages.settingsSaved") : t("pages.unsavedChanges")}</div>
+            <div className="text-xs text-[var(--text-muted)]">{saved ? t("pages.settingsSaved") : t("pages.unsavedChanges")}</div>
           </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </div>
   );
 }

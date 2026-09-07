@@ -2,17 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* Light Theme Default */
+  --bg: #F7FAF7;
+  --surface: #FFFFFF;
+  --surface-2: #EEF5EF;
+  --border: #D3E1D5;
+  --green: #168A35;
+  --green-dark: #0E6727;
+  --text: #101711;
+  --text-muted: #617064;
+  --danger: #B83333;
+  --warning: #916F12;
+}
+
+.dark {
+  /* Dark Theme Default */
+  --bg: #07100B;
+  --surface: #0D1710;
+  --surface-2: #122018;
+  --border: #24382A;
+  --green: #39D353;
+  --green-dark: #1F8F38;
+  --text: #F2F7F3;
+  --text-muted: #9DAEA1;
+  --danger: #E05A5A;
+  --warning: #D8B44A;
+}
+
 @layer base {
   html {
-    background: #f2f5f9;
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color 0.2s ease, color 0.2s ease;
   }
 
   body {
     min-width: 320px;
     margin: 0;
-    color: #0f172a;
+    font-family: Inter, system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     text-rendering: geometricPrecision;
+    background-color: var(--bg);
+    color: var(--text);
   }
 
   button,

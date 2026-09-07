@@ -1,34 +1,49 @@
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
-import { login } from "../services/auth";
 import { useNavigate } from "../router";
-import { Mail, Lock, Sprout, ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { register } from "../services/auth";
+import { User, Mail, Lock, UserCheck, Sprout, ArrowRight } from "lucide-react";
 
-export default function Login() {
+export default function Register() {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
+  const [userName, setUserName] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
-  async function handleLogin(e) {
+  async function handleRegister(e) {
     e.preventDefault();
     setError("");
+    setSuccess("");
+
+    if (!userName.trim() || !email.trim() || !password) {
+      setError(t("auth.registrationFailed", "Please fill in all required fields."));
+      return;
+    }
 
     try {
       setLoading(true);
-      await login({
+      await register({
+        user_name: userName.trim(),
+        username: userName.trim(),
+        name: name.trim() || userName.trim(),
         email: email.trim().toLowerCase(),
         password
       });
 
-      window.location.href = "/";
+      setSuccess(t("auth.registrationSuccess", "Registration successful! Redirecting to login..."));
+      setTimeout(() => {
+        navigate("/login");
+      }, 1500);
     } catch (err) {
       setError(
         err.response?.data?.error ||
-        t("auth.loginFailed", "Invalid email or password.")
+        t("auth.registrationFailed", "Registration failed. Please try again.")
       );
     } finally {
       setLoading(false);
@@ -47,7 +62,7 @@ export default function Login() {
             Crop-Disease-Detection
           </h2>
           <p className="mt-1 text-sm text-[var(--text-muted)]">
-            Crop Disease Diagnostic System
+            Create an account to track crop health history
           </p>
         </div>
 
@@ -57,14 +72,14 @@ export default function Login() {
           <div className="mb-6 grid grid-cols-2 rounded-xl bg-[var(--surface-2)] p-1 border border-[var(--border)]">
             <button
               type="button"
-              className="rounded-lg bg-[var(--green)] py-2 text-sm font-semibold text-white shadow-sm"
+              onClick={() => navigate("/login")}
+              className="rounded-lg py-2 text-sm font-medium text-[var(--text-muted)] transition-all hover:text-[var(--text)]"
             >
               {t("auth.login", "Login")}
             </button>
             <button
               type="button"
-              onClick={() => navigate("/register")}
-              className="rounded-lg py-2 text-sm font-medium text-[var(--text-muted)] transition-all hover:text-[var(--text)]"
+              className="rounded-lg bg-[var(--green)] py-2 text-sm font-semibold text-white shadow-sm"
             >
               {t("auth.register", "Register")}
             </button>
@@ -76,11 +91,56 @@ export default function Login() {
             </div>
           )}
 
-          <form onSubmit={handleLogin} className="space-y-4">
+          {success && (
+            <div className="mb-4 rounded-xl border border-[var(--green)]/30 bg-[var(--green)]/10 p-3 text-sm text-[var(--green)]">
+              {success}
+            </div>
+          )}
+
+          <form onSubmit={handleRegister} className="space-y-4">
+            {/* Username Field */}
+            <div>
+              <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">
+                {t("auth.user_name", "Username")} <span className="text-[var(--green)]">*</span>
+              </label>
+              <div className="relative">
+                <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-[var(--text-muted)]">
+                  <User className="h-4 w-4" />
+                </div>
+                <input
+                  type="text"
+                  required
+                  placeholder="e.g. john_doe"
+                  className="w-full rounded-xl border border-[var(--border)] bg-[var(--surface-2)] py-2.5 pl-10 pr-4 text-sm text-[var(--text)] placeholder-[var(--text-muted)] focus:border-[var(--green)] focus:outline-none focus:ring-1 focus:ring-[var(--green)]"
+                  value={userName}
+                  onChange={(e) => setUserName(e.target.value)}
+                />
+              </div>
+            </div>
+
+            {/* Name Field */}
+            <div>
+              <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">
+                {t("auth.name", "Full Name")}
+              </label>
+              <div className="relative">
+                <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-[var(--text-muted)]">
+                  <UserCheck className="h-4 w-4" />
+                </div>
+                <input
+                  type="text"
+                  placeholder="e.g. John Doe"
+                  className="w-full rounded-xl border border-[var(--border)] bg-[var(--surface-2)] py-2.5 pl-10 pr-4 text-sm text-[var(--text)] placeholder-[var(--text-muted)] focus:border-[var(--green)] focus:outline-none focus:ring-1 focus:ring-[var(--green)]"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </div>
+            </div>
+
             {/* Email Field */}
             <div>
               <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">
-                {t("auth.email", "Email Address")}
+                {t("auth.email", "Email Address")} <span className="text-[var(--green)]">*</span>
               </label>
               <div className="relative">
                 <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-[var(--text-muted)]">
@@ -100,7 +160,7 @@ export default function Login() {
             {/* Password Field */}
             <div>
               <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">
-                {t("auth.password", "Password")}
+                {t("auth.password", "Password")} <span className="text-[var(--green)]">*</span>
               </label>
               <div className="relative">
                 <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-[var(--text-muted)]">
@@ -123,20 +183,20 @@ export default function Login() {
               disabled={loading}
               className="mt-6 flex w-full items-center justify-center space-x-2 rounded-xl bg-[var(--green)] py-2.5 text-sm font-semibold text-white transition-all hover:bg-[var(--green-dark)] focus:outline-none disabled:opacity-50"
             >
-              <span>{loading ? t("buttons.loggingIn", "Logging in...") : t("auth.login", "Login")}</span>
+              <span>{loading ? t("buttons.registering", "Registering...") : t("auth.createAccount", "Create Account")}</span>
               {!loading && <ArrowRight className="h-4 w-4" />}
             </button>
           </form>
 
           {/* Toggle link at bottom */}
           <div className="mt-6 text-center text-sm text-[var(--text-muted)]">
-            {t("auth.dontHaveAccount", "Don't have an account?")}{" "}
+            {t("auth.alreadyHaveAccount", "Already have an account?")}{" "}
             <button
               type="button"
               className="font-semibold text-[var(--green)] hover:underline focus:outline-none"
-              onClick={() => navigate("/register")}
+              onClick={() => navigate("/login")}
             >
-              {t("auth.register", "Register")}
+              {t("auth.login", "Login")}
             </button>
           </div>
         </div>

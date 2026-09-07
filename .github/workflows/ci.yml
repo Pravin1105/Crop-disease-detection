@@ -1,0 +1,53 @@
+name: CI/CD Pipeline - Crop Disease Detection
+
+on:
+  push:
+    branches: [ main, master ]
+    tags: [ 'v*' ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  backend-ci:
+    name: Backend CI (Python)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: 'backend/requirements.txt'
+
+      - name: Install Backend Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r backend/requirements.txt
+
+      - name: Verify Backend Python Compilation
+        run: |
+          python -m py_compile backend/app.py backend/repositories/base.py backend/repositories/sqlite_repo.py backend/repositories/mongodb_repo.py backend/repositories/factory.py backend/routes/auth.py backend/routes/predict.py backend/routes/history.py backend/routes/profile.py
+
+  frontend-ci:
+    name: Frontend CI (Node.js & Vite Build)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Frontend Dependencies
+        run: npm install
+
+      - name: Build Frontend Application
+        run: npm run build

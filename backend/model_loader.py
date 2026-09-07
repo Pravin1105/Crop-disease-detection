@@ -1,3 +1,6 @@
+import os
+from pathlib import Path
+
 import torch
 import timm
 
@@ -16,6 +19,15 @@ DEVICE = torch.device(
 )
 
 IMG_SIZE = 224
+BASE_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = BASE_DIR.parent
+configured_model_path = Path(os.getenv("MODEL_PATH", "best_convnextv2.pth"))
+MODEL_PATH = configured_model_path if configured_model_path.is_absolute() else (
+    PROJECT_ROOT / configured_model_path
+)
+
+if not MODEL_PATH.exists():
+    raise FileNotFoundError(f"Model file not found: {MODEL_PATH}")
 
 
 transform = transforms.Compose([
@@ -36,7 +48,7 @@ model = timm.create_model(
 
 model.load_state_dict(
     torch.load(
-        "/Users/pravin/Downloads/Crop-disease-detection/best_convnextv2.pth",
+        MODEL_PATH,
         map_location=DEVICE
     )
 )

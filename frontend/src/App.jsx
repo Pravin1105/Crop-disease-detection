@@ -1,10 +1,12 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route } from "./router";
 
 import Dashboard from "./pages/Dashboard";
 import History from "./pages/History";
+import Login from "./pages/Login";
 import Notifications from "./pages/Notifications";
 import PredictionDetails from "./pages/PredictionDetails";
 import Profile from "./pages/Profile";
+import Register from "./pages/Register";
 import Settings from "./pages/Settings";
 
 export default function App() {
@@ -14,6 +16,16 @@ export default function App() {
       <Route
         path="/"
         element={<Dashboard />}
+      />
+
+      <Route
+        path="/login"
+        element={<Login />}
+      />
+
+      <Route
+        path="/register"
+        element={<Register />}
       />
 
       <Route

@@ -38,7 +38,9 @@
     "uploadImage": "Upload Image",
     "predicting": "Predicting...",
     "loggingIn": "Logging in...",
+    "registering": "Registering...",
     "login": "Login",
+    "register": "Register",
     "saveSettings": "Save settings",
     "resetDefaults": "Reset to defaults",
     "logout": "Logout",
@@ -46,9 +48,19 @@
     "contactUs": "Contact Us"
   },
   "auth": {
-    "email": "Email",
+    "email": "Email Address",
     "password": "Password",
-    "loginFailed": "Login failed"
+    "username": "Username",
+    "user_name": "Username",
+    "name": "Full Name",
+    "login": "Login",
+    "register": "Register",
+    "createAccount": "Create Account",
+    "loginFailed": "Login failed",
+    "registrationSuccess": "Registration successful! Please log in.",
+    "registrationFailed": "Registration failed",
+    "alreadyHaveAccount": "Already have an account?",
+    "dontHaveAccount": "Don't have an account?"
   },
   "pages": {
     "login": "Login",

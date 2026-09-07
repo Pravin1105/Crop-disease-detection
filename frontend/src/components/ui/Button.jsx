@@ -8,23 +8,25 @@ export default function Button({
 }) {
   const variants = {
     primary:
-      "bg-brand text-white shadow-soft hover:bg-blue-600 focus-visible:outline-blue-500",
+      "bg-[var(--green)] text-white hover:bg-[var(--green-dark)] focus-visible:outline-[var(--green)]",
     subtle:
-      "border border-border bg-white text-blue-700 hover:border-blue-300 hover:bg-blue-50 focus-visible:outline-blue-500"
+      "border border-[var(--border)] bg-[var(--surface-2)] text-[var(--text)] hover:border-[var(--green)] focus-visible:outline-[var(--green)]",
+    danger:
+      "bg-[var(--danger)] text-white hover:opacity-90 focus-visible:outline-[var(--danger)]"
   };
 
   return (
     <button
-      className={`inline-flex min-h-12 items-center justify-center gap-3 rounded-lg px-5 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${variants[variant]} ${className}`}
+      className={`inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-5 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${variants[variant]} ${className}`}
       type="button"
       {...props}
     >
       {Icon && iconPosition === "left" ? (
-        <Icon aria-hidden="true" className="h-5 w-5" strokeWidth={1.9} />
+        <Icon aria-hidden="true" className="h-4 w-4" strokeWidth={2} />
       ) : null}
       <span>{children}</span>
       {Icon && iconPosition === "right" ? (
-        <Icon aria-hidden="true" className="h-5 w-5" strokeWidth={1.9} />
+        <Icon aria-hidden="true" className="h-4 w-4" strokeWidth={2} />
       ) : null}
     </button>
   );
