@@ -1,0 +1,4 @@
+# Ignore backend and ML model files so Vercel only builds the frontend React SPA
+backend/
+*.pth
+*.ipynb
