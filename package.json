@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
-    "build": "vite build",
+    "build": "vite build && mkdir -p frontend/dist build public && cp -R dist/* frontend/dist/ && cp -R dist/* build/ && cp -R dist/* public/",
     "preview": "vite preview --host 0.0.0.0",
     "backend": "python3 backend/app.py"
   },
