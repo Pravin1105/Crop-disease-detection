@@ -8,8 +8,6 @@ ENV/
 .venv/
 
 # Build and Production Outputs
-dist/
-frontend/dist/
 frontend/.vite/
 build/
 *.egg-info/
