@@ -29,14 +29,27 @@ app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET_KEY", "change_this_to_a_lon
 app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(days=7)
 jwt = JWTManager(app)
 
+import shutil
+
 # Database Configuration
 IS_VERCEL = os.getenv("VERCEL") is not None
 if IS_VERCEL:
     DB_PATH = "/tmp/prediction.db"
+    bundled_db = os.path.join(BASE_DIR, "instance", "prediction.db")
+    if not os.path.exists(DB_PATH) and os.path.exists(bundled_db):
+        try:
+            shutil.copy2(bundled_db, DB_PATH)
+            print("[INFO] Copied seed database to /tmp/prediction.db")
+        except Exception as e:
+            print("[WARN] Could not copy seed DB:", e)
+    UPLOAD_FOLDER = "/tmp/uploads"
+    os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 else:
     INSTANCE_DIR = os.path.join(BASE_DIR, "instance")
     os.makedirs(INSTANCE_DIR, exist_ok=True)
     DB_PATH = os.path.join(INSTANCE_DIR, "prediction.db")
+    UPLOAD_FOLDER = os.path.join(BASE_DIR, "uploads")
+    os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL", f"sqlite:///{DB_PATH}")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
@@ -91,7 +104,6 @@ def home():
         "profile_route_loaded": True
     }
 
-UPLOAD_FOLDER = os.path.join(BASE_DIR, "uploads")
 
 @app.route("/uploads/<filename>")
 def uploaded_file(filename):

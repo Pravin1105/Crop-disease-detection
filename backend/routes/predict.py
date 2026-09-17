@@ -12,7 +12,8 @@ from repositories import get_repository
 predict_bp = Blueprint("predict", __name__)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-UPLOAD_FOLDER = os.path.abspath(os.path.join(BASE_DIR, "..", "uploads"))
+IS_VERCEL = os.getenv("VERCEL") is not None
+UPLOAD_FOLDER = "/tmp/uploads" if IS_VERCEL else os.path.abspath(os.path.join(BASE_DIR, "..", "uploads"))
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 @predict_bp.route("/predict", methods=["POST"])
