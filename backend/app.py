@@ -30,10 +30,14 @@ app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(days=7)
 jwt = JWTManager(app)
 
 # Database Configuration
-INSTANCE_DIR = os.path.join(BASE_DIR, "instance")
-os.makedirs(INSTANCE_DIR, exist_ok=True)
+IS_VERCEL = os.getenv("VERCEL") is not None
+if IS_VERCEL:
+    DB_PATH = "/tmp/prediction.db"
+else:
+    INSTANCE_DIR = os.path.join(BASE_DIR, "instance")
+    os.makedirs(INSTANCE_DIR, exist_ok=True)
+    DB_PATH = os.path.join(INSTANCE_DIR, "prediction.db")
 
-DB_PATH = os.path.join(INSTANCE_DIR, "prediction.db")
 app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL", f"sqlite:///{DB_PATH}")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
@@ -74,6 +78,9 @@ app.register_blueprint(auth_bp)
 app.register_blueprint(predict_bp)
 app.register_blueprint(history_bp)
 app.register_blueprint(profile_bp)
+
+with app.app_context():
+    db.create_all()
 
 # Static & Base Routes
 @app.route("/")

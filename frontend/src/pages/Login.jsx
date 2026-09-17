@@ -26,9 +26,11 @@ export default function Login() {
 
       window.location.href = "/";
     } catch (err) {
+      const errMsg = err.response?.data?.error || err.response?.data?.message || err.message;
       setError(
-        err.response?.data?.error ||
-        t("auth.loginFailed", "Invalid email or password.")
+        typeof errMsg === "string" 
+          ? errMsg 
+          : t("auth.loginFailed", "Invalid email or password.")
       );
     } finally {
       setLoading(false);

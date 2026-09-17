@@ -41,9 +41,11 @@ export default function Register() {
         navigate("/login");
       }, 1500);
     } catch (err) {
+      const errMsg = err.response?.data?.error || err.response?.data?.message || err.message;
       setError(
-        err.response?.data?.error ||
-        t("auth.registrationFailed", "Registration failed. Please try again.")
+        typeof errMsg === "string"
+          ? errMsg
+          : t("auth.registrationFailed", "Registration failed. Please try again.")
       );
     } finally {
       setLoading(false);
