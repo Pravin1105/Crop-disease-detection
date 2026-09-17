@@ -92,11 +92,32 @@ app.register_blueprint(predict_bp)
 app.register_blueprint(history_bp)
 app.register_blueprint(profile_bp)
 
+# Also register under /api prefix for API consistency
+app.register_blueprint(auth_bp, url_prefix="/api")
+app.register_blueprint(predict_bp, url_prefix="/api")
+app.register_blueprint(history_bp, url_prefix="/api")
+app.register_blueprint(profile_bp, url_prefix="/api")
+
 with app.app_context():
     db.create_all()
+    # Ensure default user exists (essential for ephemeral /tmp SQLite on Vercel)
+    try:
+        if not User.query.filter_by(email="pravin@gmail.com").first():
+            seed_user = User(
+                user_name="pravin",
+                name="pravin",
+                email="pravin@gmail.com",
+                password="pbkdf2:sha256:1000000$RjKs7SOgcfqBgJk4$2c84b232ddcdb7498ac64e75a92b315db31078fb3b26ca4dda7a89a61d041234"
+            )
+            db.session.add(seed_user)
+            db.session.commit()
+            print("[INFO] Seeded default user pravin@gmail.com successfully")
+    except Exception as e:
+        print("[WARN] Could not seed default user:", e)
 
 # Static & Base Routes
 @app.route("/")
+@app.route("/api/health")
 def home():
     return {
         "status": "running",

@@ -41,9 +41,15 @@ export default function Register() {
         navigate("/login");
       }, 1500);
     } catch (err) {
-      const errMsg = err.response?.data?.error || err.response?.data?.message || err.message;
+      let errMsg = err.response?.data?.error || err.response?.data?.message;
+      if (!errMsg && typeof err.response?.data === "string" && err.response.data.trim()) {
+        errMsg = err.response.data.length < 150 ? err.response.data : `Server error (${err.response.status})`;
+      }
+      if (!errMsg && err.message) {
+        errMsg = err.message;
+      }
       setError(
-        typeof errMsg === "string"
+        typeof errMsg === "string" && errMsg.trim()
           ? errMsg
           : t("auth.registrationFailed", "Registration failed. Please try again.")
       );
