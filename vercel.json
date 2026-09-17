@@ -4,6 +4,38 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
+      "source": "/api/(.*)",
+      "destination": "/api/index.py"
+    },
+    {
+      "source": "/login",
+      "destination": "/api/index.py"
+    },
+    {
+      "source": "/register",
+      "destination": "/api/index.py"
+    },
+    {
+      "source": "/predict",
+      "destination": "/api/index.py"
+    },
+    {
+      "source": "/history",
+      "destination": "/api/index.py"
+    },
+    {
+      "source": "/history/(.*)",
+      "destination": "/api/index.py"
+    },
+    {
+      "source": "/profile",
+      "destination": "/api/index.py"
+    },
+    {
+      "source": "/uploads/(.*)",
+      "destination": "/api/index.py"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

@@ -1,3 +1,2 @@
-# Ignore backend and ML model files so Vercel only builds the frontend React SPA
-*.pth
+# Only ignore Jupyter notebooks during Vercel deployment
 *.ipynb
