@@ -31,7 +31,7 @@ except Exception as e:
             "traceback": err_tb.splitlines(),
             "sys_path": sys.path,
             "cwd": os.getcwd()
-        }), 500
+        }), 200
 
 class VercelPathMiddleware:
     def __init__(self, wsgi_app):
