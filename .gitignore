@@ -33,10 +33,11 @@ backend/instance.prediction.db
 # Machine Learning Model Checkpoints (Heavy Binaries > 100MB tracked with Git LFS)
 *.pth
 !best_convnextv2.pth
+*.onnx
+!best_convnextv2.onnx
 *.pt
 *.bin
 *.h5
-*.onnx
 *.safetensors
 *.tflite
 *.ckpt
