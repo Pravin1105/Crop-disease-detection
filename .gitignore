@@ -30,8 +30,9 @@ frontend/.env
 backend/instance/
 backend/instance.prediction.db
 
-# Machine Learning Model Checkpoints (Heavy Binaries > 100MB)
+# Machine Learning Model Checkpoints (Heavy Binaries > 100MB tracked with Git LFS)
 *.pth
+!best_convnextv2.pth
 *.pt
 *.bin
 *.h5
@@ -39,7 +40,6 @@ backend/instance.prediction.db
 *.safetensors
 *.tflite
 *.ckpt
-best_convnextv2.pth
 convnextv2_crop_best.pth
 
 # User Uploaded Media & Runtime Assets

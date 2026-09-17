@@ -22,9 +22,16 @@ IMG_SIZE = 224
 BASE_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = BASE_DIR.parent
 configured_model_path = Path(os.getenv("MODEL_PATH", "best_convnextv2.pth"))
-MODEL_PATH = configured_model_path if configured_model_path.is_absolute() else (
-    PROJECT_ROOT / configured_model_path
-)
+if configured_model_path.is_absolute():
+    MODEL_PATH = configured_model_path
+else:
+    possible_paths = [
+        PROJECT_ROOT / configured_model_path,
+        BASE_DIR / configured_model_path,
+        PROJECT_ROOT / "best_convnextv2.pth",
+        BASE_DIR / "best_convnextv2.pth"
+    ]
+    MODEL_PATH = next((p for p in possible_paths if p.exists()), PROJECT_ROOT / configured_model_path)
 
 if not MODEL_PATH.exists():
     raise FileNotFoundError(f"Model file not found: {MODEL_PATH}")
