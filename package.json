@@ -1,11 +1,11 @@
 {
   "name": "crop-disease-detection",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
-    "build": "npm install && vite build",
+    "build": "vite build",
     "preview": "vite preview --host 0.0.0.0",
     "backend": "python3 backend/app.py"
   },
