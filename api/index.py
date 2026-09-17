@@ -33,5 +33,15 @@ except Exception as e:
             "cwd": os.getcwd()
         }), 500
 
-# Vercel Serverless Function entrypoint
-app = app
+class VercelPathMiddleware:
+    def __init__(self, wsgi_app):
+        self.wsgi_app = wsgi_app
+
+    def __call__(self, environ, start_response):
+        matched_path = environ.get("HTTP_X_MATCHED_PATH")
+        if matched_path:
+            clean_path = matched_path.split("?")[0]
+            environ["PATH_INFO"] = clean_path
+        return self.wsgi_app(environ, start_response)
+
+app.wsgi_app = VercelPathMiddleware(app.wsgi_app)

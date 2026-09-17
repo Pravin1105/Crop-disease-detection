@@ -51,7 +51,10 @@ else:
     UPLOAD_FOLDER = os.path.join(BASE_DIR, "uploads")
     os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL", f"sqlite:///{DB_PATH}")
+raw_db_uri = os.getenv("DATABASE_URL", f"sqlite:///{DB_PATH}")
+if raw_db_uri.startswith("postgres://"):
+    raw_db_uri = raw_db_uri.replace("postgres://", "postgresql://", 1)
+app.config["SQLALCHEMY_DATABASE_URI"] = raw_db_uri
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 # Extensions & CORS
@@ -98,9 +101,16 @@ app.register_blueprint(predict_bp, url_prefix="/api", name="predict_api")
 app.register_blueprint(history_bp, url_prefix="/api", name="history_api")
 app.register_blueprint(profile_bp, url_prefix="/api", name="profile_api")
 
-@app.errorhandler(500)
-def handle_500(e):
-    return {"error": f"Internal server error: {str(e)}"}, 500
+@app.errorhandler(Exception)
+def handle_all_exceptions(e):
+    import traceback
+    tb = traceback.format_exc()
+    print(f"[UNHANDLED EXCEPTION] {e}\n{tb}")
+    return {
+        "error": str(e),
+        "type": type(e).__name__,
+        "traceback": tb.splitlines()
+    }, 500
 
 @app.errorhandler(404)
 def handle_404(e):
@@ -131,6 +141,26 @@ def home():
         "status": "running",
         "message": "Crop Disease Detection API",
         "profile_route_loaded": True
+    }
+
+@app.route("/debug")
+@app.route("/api/debug")
+@app.route("/api/index.py")
+def debug_endpoint():
+    from flask import request
+    user_count = -1
+    try:
+        user_count = User.query.count()
+    except Exception as e:
+        user_count = str(e)
+    return {
+        "status": "ok",
+        "db_uri": app.config.get("SQLALCHEMY_DATABASE_URI"),
+        "user_count": user_count,
+        "is_vercel": IS_VERCEL,
+        "path": request.path,
+        "x_matched_path": request.headers.get("x-matched-path"),
+        "environ_path_info": request.environ.get("PATH_INFO")
     }
 
 
