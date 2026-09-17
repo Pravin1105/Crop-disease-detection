@@ -51,10 +51,24 @@ else:
     UPLOAD_FOLDER = os.path.join(BASE_DIR, "uploads")
     os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-raw_db_uri = os.getenv("DATABASE_URL", f"sqlite:///{DB_PATH}")
-if raw_db_uri.startswith("postgres://"):
-    raw_db_uri = raw_db_uri.replace("postgres://", "postgresql://", 1)
-app.config["SQLALCHEMY_DATABASE_URI"] = raw_db_uri
+env_db_url = os.getenv("DATABASE_URL", "").strip().strip("'\"")
+valid_url = False
+if env_db_url:
+    if env_db_url.startswith("postgres://"):
+        env_db_url = env_db_url.replace("postgres://", "postgresql://", 1)
+    try:
+        from sqlalchemy.engine import make_url
+        make_url(env_db_url)
+        valid_url = True
+    except Exception as e:
+        print(f"[WARN] Invalid DATABASE_URL '{env_db_url}': {e}. Falling back to SQLite.")
+        valid_url = False
+
+if valid_url:
+    app.config["SQLALCHEMY_DATABASE_URI"] = env_db_url
+else:
+    app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{DB_PATH}"
+
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 # Extensions & CORS
