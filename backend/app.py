@@ -39,9 +39,12 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 # Extensions & CORS
 cors_origins = os.getenv("CORS_ORIGINS")
+origins_list = [origin.strip() for origin in cors_origins.split(",") if origin.strip()] if cors_origins else "*"
 CORS(
     app,
-    origins=[origin.strip() for origin in cors_origins.split(",")] if cors_origins else "*"
+    resources={r"/*": {"origins": origins_list}},
+    allow_headers=["Content-Type", "Authorization"],
+    methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"]
 )
 db.init_app(app)
 
