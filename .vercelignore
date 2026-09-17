@@ -1,2 +1,3 @@
-# Only ignore Jupyter notebooks during Vercel deployment
+# Exclude duplicate .pth model file to stay under Vercel's 225MB serverless limit
 *.ipynb
+best_convnextv2.pth
