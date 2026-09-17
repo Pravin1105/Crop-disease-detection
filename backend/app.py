@@ -93,10 +93,18 @@ app.register_blueprint(history_bp)
 app.register_blueprint(profile_bp)
 
 # Also register under /api prefix for API consistency
-app.register_blueprint(auth_bp, url_prefix="/api")
-app.register_blueprint(predict_bp, url_prefix="/api")
-app.register_blueprint(history_bp, url_prefix="/api")
-app.register_blueprint(profile_bp, url_prefix="/api")
+app.register_blueprint(auth_bp, url_prefix="/api", name="auth_api")
+app.register_blueprint(predict_bp, url_prefix="/api", name="predict_api")
+app.register_blueprint(history_bp, url_prefix="/api", name="history_api")
+app.register_blueprint(profile_bp, url_prefix="/api", name="profile_api")
+
+@app.errorhandler(500)
+def handle_500(e):
+    return {"error": f"Internal server error: {str(e)}"}, 500
+
+@app.errorhandler(404)
+def handle_404(e):
+    return {"error": "Endpoint not found"}, 404
 
 with app.app_context():
     db.create_all()
