@@ -7,8 +7,11 @@ from repositories import get_repository
 
 auth_bp = Blueprint("auth", __name__)
 
-@auth_bp.route("/register", methods=["POST"])
+@auth_bp.route("/register", methods=["POST", "GET"])
 def register():
+    if request.method == "GET":
+        from flask import redirect
+        return redirect("/")
     try:
         data = request.get_json() or {}
 
@@ -53,8 +56,11 @@ def register():
         traceback.print_exc()
         return jsonify({"error": f"Registration exception: {str(e)}"}), 500
 
-@auth_bp.route("/login", methods=["POST"])
+@auth_bp.route("/login", methods=["POST", "GET"])
 def login():
+    if request.method == "GET":
+        from flask import redirect
+        return redirect("/")
     try:
         data = request.get_json() or {}
         email = (data.get("email") or "").strip().lower()
