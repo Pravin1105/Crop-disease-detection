@@ -143,9 +143,19 @@ with app.app_context():
             )
             db.session.add(seed_user)
             db.session.commit()
-            print("[INFO] Seeded default user pravin@gmail.com successfully")
+        if not User.query.filter_by(email="demo@cropdisease.org").first():
+            from werkzeug.security import generate_password_hash
+            demo_user = User(
+                user_name="demouser",
+                name="Demo Farmer",
+                email="demo@cropdisease.org",
+                password=generate_password_hash("DemoUser123!", method="pbkdf2:sha256")
+            )
+            db.session.add(demo_user)
+            db.session.commit()
+            print("[INFO] Seeded demo user demo@cropdisease.org successfully")
     except Exception as e:
-        print("[WARN] Could not seed default user:", e)
+        print("[WARN] Could not seed default users:", e)
 
 # Static & Base Routes
 @app.route("/")

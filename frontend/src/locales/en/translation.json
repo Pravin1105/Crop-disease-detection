@@ -60,7 +60,12 @@
     "registrationSuccess": "Registration successful! Please log in.",
     "registrationFailed": "Registration failed",
     "alreadyHaveAccount": "Already have an account?",
-    "dontHaveAccount": "Don't have an account?"
+    "dontHaveAccount": "Don't have an account?",
+    "demoLogin": "Explore with Demo Account",
+    "loggingInDemo": "Logging in as Demo User...",
+    "demoAccount": "Demo Account",
+    "or": "OR",
+    "fill": "Fill"
   },
   "pages": {
     "login": "Login",

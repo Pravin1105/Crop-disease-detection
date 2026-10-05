@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { login } from "../services/auth";
+import { login, demoLogin, DEMO_CREDENTIALS } from "../services/auth";
 import { useNavigate } from "../router";
-import { Mail, Lock, Sprout, ArrowRight } from "lucide-react";
+import { Mail, Lock, Sprout, ArrowRight, Sparkles, KeyRound } from "lucide-react";
 
 export default function Login() {
   const { t } = useTranslation();
@@ -11,6 +11,7 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const [demoLoading, setDemoLoading] = useState(false);
   const [error, setError] = useState("");
 
   async function handleLogin(e) {
@@ -41,6 +42,30 @@ export default function Login() {
     } finally {
       setLoading(false);
     }
+  }
+
+  async function handleDemoLogin() {
+    setError("");
+
+    try {
+      setDemoLoading(true);
+      await demoLogin();
+      window.location.href = "/";
+    } catch (err) {
+      let errMsg = err.response?.data?.error || err.response?.data?.message || err.message;
+      setError(
+        typeof errMsg === "string" && errMsg.trim()
+          ? errMsg
+          : t("auth.loginFailed", "Demo login failed. Please try again.")
+      );
+    } finally {
+      setDemoLoading(false);
+    }
+  }
+
+  function handleFillDemo() {
+    setEmail(DEMO_CREDENTIALS.email);
+    setPassword(DEMO_CREDENTIALS.password);
   }
 
   return (
@@ -128,13 +153,53 @@ export default function Login() {
             {/* Submit Button */}
             <button
               type="submit"
-              disabled={loading}
+              disabled={loading || demoLoading}
               className="mt-6 flex w-full items-center justify-center space-x-2 rounded-xl bg-[var(--green)] py-2.5 text-sm font-semibold text-white transition-all hover:bg-[var(--green-dark)] focus:outline-none disabled:opacity-50"
             >
               <span>{loading ? t("buttons.loggingIn", "Logging in...") : t("auth.login", "Login")}</span>
               {!loading && <ArrowRight className="h-4 w-4" />}
             </button>
           </form>
+
+          {/* Divider */}
+          <div className="relative my-5 flex items-center justify-center">
+            <div className="w-full border-t border-[var(--border)]" />
+            <span className="bg-[var(--surface)] px-3 text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">
+              {t("auth.or", "OR")}
+            </span>
+          </div>
+
+          {/* Quick 1-Click Demo Login Button */}
+          <button
+            type="button"
+            onClick={handleDemoLogin}
+            disabled={loading || demoLoading}
+            className="flex w-full items-center justify-center space-x-2 rounded-xl border border-[var(--green)]/40 bg-[var(--green)]/10 py-2.5 text-sm font-semibold text-[var(--green)] transition-all hover:bg-[var(--green)] hover:text-white focus:outline-none disabled:opacity-50 shadow-sm"
+          >
+            <Sparkles className="h-4 w-4" />
+            <span>
+              {demoLoading
+                ? t("auth.loggingInDemo", "Logging in as Demo User...")
+                : t("auth.demoLogin", "Explore with Demo Account")}
+            </span>
+          </button>
+
+          {/* Demo Credentials Pill */}
+          <div className="mt-3.5 flex items-center justify-between rounded-xl border border-[var(--border)] bg-[var(--surface-2)] px-3.5 py-2 text-xs text-[var(--text-muted)]">
+            <div className="flex items-center space-x-2 truncate">
+              <KeyRound className="h-3.5 w-3.5 flex-shrink-0 text-[var(--green)]" />
+              <span className="truncate">
+                {t("auth.demoAccount", "Demo Account")}: <strong className="text-[var(--text)] font-mono font-medium">demo@cropdisease.org</strong>
+              </span>
+            </div>
+            <button
+              type="button"
+              onClick={handleFillDemo}
+              className="ml-2 flex-shrink-0 font-semibold text-[var(--green)] hover:underline focus:outline-none"
+            >
+              {t("auth.fill", "Fill")}
+            </button>
+          </div>
 
           {/* Toggle link at bottom */}
           <div className="mt-6 text-center text-sm text-[var(--text-muted)]">

@@ -17,6 +17,10 @@
       "destination": "/api/index.py"
     },
     {
+      "source": "/demo-login",
+      "destination": "/api/index.py"
+    },
+    {
       "source": "/register",
       "destination": "/api/index.py"
     },

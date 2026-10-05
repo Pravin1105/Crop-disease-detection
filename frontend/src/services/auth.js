@@ -45,6 +45,26 @@ export async function login(credentials) {
 
 }
 
+export const DEMO_CREDENTIALS = {
+    email: "demo@cropdisease.org",
+    password: "DemoUser123!"
+};
+
+export async function demoLogin() {
+    let data;
+    try {
+        const response = await api.post("/demo-login");
+        data = response.data;
+    } catch {
+        const response = await api.post("/login", DEMO_CREDENTIALS);
+        data = response.data;
+    }
+
+    localStorage.setItem("token", data.token);
+    localStorage.setItem("username", data.user_name || data.username);
+    return data;
+}
+
 export function logout() {
 
     localStorage.removeItem("token");

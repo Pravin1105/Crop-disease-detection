@@ -82,3 +82,38 @@ def login():
     except Exception as e:
         traceback.print_exc()
         return jsonify({"error": f"Login exception: {str(e)}"}), 500
+
+DEMO_EMAIL = "demo@cropdisease.org"
+DEMO_USERNAME = "demouser"
+DEMO_NAME = "Demo Farmer"
+DEMO_PASSWORD = "DemoUser123!"
+
+@auth_bp.route("/demo-login", methods=["POST", "GET"])
+def demo_login():
+    try:
+        repo = get_repository()
+        user = repo.get_user_by_email(DEMO_EMAIL)
+
+        if user is None:
+            password_hash = generate_password_hash(DEMO_PASSWORD, method="pbkdf2:sha256")
+            user = repo.create_user(
+                user_name=DEMO_USERNAME,
+                name=DEMO_NAME,
+                email=DEMO_EMAIL,
+                password_hash=password_hash
+            )
+
+        token = create_access_token(identity=str(user["user_id"]))
+
+        return jsonify({
+            "token": token,
+            "username": user["user_name"],
+            "user_id": user["user_id"],
+            "user_name": user["user_name"],
+            "name": user["name"],
+            "email": user["email"],
+            "is_demo": True
+        })
+    except Exception as e:
+        traceback.print_exc()
+        return jsonify({"error": f"Demo login exception: {str(e)}"}), 500
